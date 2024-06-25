@@ -92,6 +92,15 @@
             
             <hr class="text-white">
             
+            <h6 class="text-white mt-4">Tecnologie</h6>
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link text-white rounded-2 {{ Request::route()->getName() == 'admin.technology.create' ? 'bg-primary' : ''}}"
+                  href="{{ route('admin.technology.create') }}">
+                  <i class="fa-solid fa-square-plus"></i> Aggiungi Tecnologie
+                </a>
+              </li>
+            </ul>
 
           </div>
         </nav>

@@ -39,7 +39,7 @@
                     <li class="mb-3">
                         <strong>Tecnologie: </strong>
                         @forelse ($project->technologies as $technology )
-                            <span class="badge" style="background-color: {{$technology->color }}">{{ $technology->name }}</span>
+                            <span class="badge" style="background-color: {{$technology->color ?: 'red' }}">{{ $technology->name }}</span>
                         @empty
                             N/D
                         @endforelse

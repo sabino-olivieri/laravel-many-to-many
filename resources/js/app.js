@@ -7,6 +7,7 @@ import { mostraAnteprima, mostraToast, nascondiToast } from "./function/function
 
 const fileElem = document.querySelector('.ms_file');
 const toastElem = document.querySelector('.ms_toast');
+const picker = document.getElementById('picker');
 
 if(toastElem) {
 
@@ -22,3 +23,12 @@ if(fileElem) {
     fileElem.addEventListener('change', mostraAnteprima);
 
 }
+
+
+if(picker) {
+    const inputPicker = document.getElementById('inputPicker');
+    picker.addEventListener('input', ()=> {
+        inputPicker.value = "Colore scelto: " + picker.value;
+    })
+}
+

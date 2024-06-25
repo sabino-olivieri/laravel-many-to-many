@@ -2,6 +2,12 @@
     background-color: transparent;
     color: white;
 
+    &:disabled {
+        background-color: #3f3f3f55;
+        color: white;
+    }
+
+
     &:focus {
         background-color: transparent;
         color: white;
@@ -37,6 +43,14 @@
 .form-floating {
     #floatingTextarea {
         height: 100px;
+    }
+}
+
+.input-group {
+    .ms_input-group-text {
+        max-width: 50px;
+        padding: 4px;
+        background-color: transparent;
     }
 }
 
