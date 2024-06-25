@@ -36,6 +36,14 @@
                     <li class="mb-3">
                         <strong>Descrizione: </strong> {{ $project->description }}
                     </li>
+                    <li class="mb-3">
+                        <strong>Tecnologie: </strong>
+                        @forelse ($project->technologies as $technology )
+                            <span class="badge" style="background-color: {{$technology->color }}">{{ $technology->name }}</span>
+                        @empty
+                            N/D
+                        @endforelse
+                    </li>
                 </ul>
             </div>
         </div>
