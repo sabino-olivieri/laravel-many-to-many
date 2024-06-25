@@ -37,14 +37,15 @@ class TechnologyController extends Controller
         $newTechnology->fill($request->validated());
         $newTechnology->slug = Str::slug($newTechnology->name);
         $newTechnology->save();
-        return redirect()->route('admin.technology.create');
+        return redirect()->route('admin.technology.show', ['technology' => $newTechnology->slug])->with('messages', 'Tecnologia '.$newTechnology->name.' salvata correttamente');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Technology $technology)
     {
+        return view('admin.technologies.show', compact('technology'));
     }
 
     /**

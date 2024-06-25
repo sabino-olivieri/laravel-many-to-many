@@ -20,7 +20,7 @@
             <div class="input-group mb-3">
                 <input type="text" class="form-control ms_form-control" placeholder="Scegli un colore" aria-label="Scegli un colore" value="Scegli un colore: #ff0000" id="inputPicker" disabled>
                 
-                <input type="color" class="form-control form-control-color input-group-text ms_input-group-text" id="picker" value="#ff0000" name="color">
+                <input type="color" class="form-control form-control-color input-group-text ms_input-group-text" id="picker" value="{{old('color', '#ff0000')}}" name="color">
             </div>
 
             <button class="btn btn-outline-success" type="submit">Aggiungi</button>

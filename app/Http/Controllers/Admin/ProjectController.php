@@ -47,7 +47,7 @@ class ProjectController extends Controller
         $newProject->image = Storage::put('img', $request->image);
         $newProject->slug = Str::slug($newProject->title);
         $newProject->save();
-        return redirect()->route('admin.project.show', ['project' => $newProject->slug])->with('message', 'Progetto '.$newProject->title.' salvato corrattamente');
+        return redirect()->route('admin.project.show', ['project' => $newProject->slug])->with('message', 'Progetto '.$newProject->title.' salvato correttamente');
     }
 
     /**
@@ -83,7 +83,7 @@ class ProjectController extends Controller
         $project->slug = Str::slug($project->title);
         $project->image = Storage::put('img', $request->image);
         $project->save();
-        return redirect()->route('admin.project.show', ['project' => $project->slug])->with('message', 'Progetto '.$project->title.' modificato corrattamente');
+        return redirect()->route('admin.project.show', ['project' => $project->slug])->with('message', 'Progetto '.$project->title.' modificato correttamente');
     }
 
     /**
@@ -95,7 +95,7 @@ class ProjectController extends Controller
             Storage::delete($project->image);
         }
         $project->delete();
-        return redirect()->route('admin.project.index')->with('message', 'Progetto '.$project->title.' eliminato corrattamente');
+        return redirect()->route('admin.project.index')->with('message', 'Progetto '.$project->title.' eliminato correttamente');
     }
 
     protected function formatData(Project $project) {
