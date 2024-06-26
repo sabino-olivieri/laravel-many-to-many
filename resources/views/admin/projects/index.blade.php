@@ -45,5 +45,7 @@
             </table>
         </div>
     </div>
-    @include('admin.projects.partials.toast')
+
+    @include('admin.partials.toast')
+    
 @endsection

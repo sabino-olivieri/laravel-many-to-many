@@ -40,4 +40,7 @@
             </table>
         </div>
     </div>
+
+    @include('admin.partials.toast')
+    
 @endsection
