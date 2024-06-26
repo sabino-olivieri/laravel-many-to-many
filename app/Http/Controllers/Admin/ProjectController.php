@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
 use App\Models\Project;
+use App\Models\Technology;
 use App\Models\Type;
 use DateTime;
 use Illuminate\Http\Request;
@@ -34,7 +35,9 @@ class ProjectController extends Controller
     public function create()
     {   
         $typeList = Type::all();
-        return view('admin.projects.create', compact('typeList'));
+        $technologiesList = Technology::all();
+
+        return view('admin.projects.create', compact('typeList', 'technologiesList'));
     }
 
     /**
@@ -66,7 +69,8 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $typeList = Type::all();
-        return view('admin.projects.edit', compact('project', 'typeList'));
+        $technologiesList = Technology::all();
+        return view('admin.projects.edit', compact('project', 'typeList', 'technologiesList'));
     }
 
     /**
