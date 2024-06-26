@@ -21,9 +21,21 @@
             <span>Colore: </span>
             <span class="tag-bg" style="background-color: {{ $technology->color }} "></span>
 
-        </div> <span class="badge" style="background-color: {{ $technology->color }} ">{{ $technology->name }}</span>
+        </div>
+        <span class="badge my-3" style="background-color: {{ $technology->color }} ">{{ $technology->name }}</span>
+
+        <h4 class="my-3">Lista progetti con {{ $technology->name }}:</h4>
+        <ul>
+
+            @forelse ($technology->projects as $project)
+                <li><a class="text-white" href="{{route('admin.project.show', ['project' => $project->slug])}}" target="_blank">{{$project->title}}</a></li>
+            @empty
+                <li>Nessun progetto</li>
+            @endforelse
+        </ul>
     </div>
 
-    @include('admin.partials.toast')
 
+
+    @include('admin.partials.toast')
 @endsection

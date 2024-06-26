@@ -39,7 +39,7 @@
                     <li class="mb-3">
                         <strong>Tecnologie: </strong>
                         @forelse ($project->technologies as $technology )
-                            <span class="badge" style="background-color: {{$technology->color ?: 'red' }}">{{ $technology->name }}</span>
+                            <a class="badge text-decoration-none" href="{{route('admin.technology.show', ['technology' => $technology->slug])}}" target="_blank" style="background-color: {{$technology->color ?: 'red' }}">{{ $technology->name }}</a>
                         @empty
                             N/D
                         @endforelse
