@@ -50,6 +50,7 @@ class ProjectController extends Controller
         $newProject->image = Storage::put('img', $request->image);
         $newProject->slug = Str::slug($newProject->title);
         $newProject->save();
+        $newProject->technologies()->attach($request->technologies);
         return redirect()->route('admin.project.show', ['project' => $newProject->slug])->with('messages', 'Progetto '.$newProject->title.' salvato correttamente');
     }
 
@@ -87,6 +88,7 @@ class ProjectController extends Controller
         $project->slug = Str::slug($project->title);
         $project->image = Storage::put('img', $request->image);
         $project->save();
+        $project->technologies()->sync($request->technologies);
         return redirect()->route('admin.project.show', ['project' => $project->slug])->with('messages', 'Progetto '.$project->title.' modificato correttamente');
     }
 

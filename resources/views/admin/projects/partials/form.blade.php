@@ -88,7 +88,7 @@
 
         <span>Scegli le tecnologie usate:</span>
 
-        <ul class="list-group text-start w-50 my-3">
+        <ul class="list-group text-start w-100  my-3">
             @foreach ($technologiesList as $technology)
                 <li class="list-group-item bg-transparent">
 
@@ -111,6 +111,11 @@
 
         </ul>
     </div>
+    @error('technologies')
+    <div class="alert alert-danger">
+        {{ $errors->get('technologies')[0] }}
+    </div>
+@enderror
 
     <input type="file" class="form-control ms_form-control mb-3 ms_file" id="image" placeholder="image"
         name="image" value="{{ old('image') }}" id="ms_file" required>

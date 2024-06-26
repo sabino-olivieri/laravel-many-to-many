@@ -31,6 +31,7 @@ class StoreProjectRequest extends FormRequest
             'site_url' => 'nullable|active_url',
             'start_date' => 'nullable|date|before_or_equal:today|required_with:finish_date',
             'finish_date' => 'nullable|date|after_or_equal:start_date',
+            'technologies' => 'nullable|exists:technologies,id',
         
         ];
     }
@@ -50,7 +51,8 @@ class StoreProjectRequest extends FormRequest
             'start_date.before_or_equal' => 'Inserisci una data uguale o precedente a oggi',
             'start_date.required_with' => 'Inserisci una data corretta',
             'finish_date.after_or_equal' => 'Inserisci una data uguale o successiva a oggi',
-            'finish.date' => 'Inserisci una data corretta',          
+            'finish.date' => 'Inserisci una data corretta',     
+            'technologies.exists' => 'La tecnologia selezionata non esiste'      
 
         ];
         
